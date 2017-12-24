@@ -1,0 +1,269 @@
+﻿<html>
+<head>
+<title>Блог</title>
+<style>
+@font-face {
+    font-family: Triforce; /* Гарнитура шрифта */
+    src: url(fonts/10921.otf); /* Путь к файлу со шрифтом */
+   }
+
+
+@media (min-width: 1700px) and (max-width: 2100px) {
+.inf{
+padding:15px;
+width:1600px;
+margin-left:200px;
+height: 100%;
+margin: auto;
+}
+}
+
+body {
+	background: #f0e3e3;
+}
+.o2 {
+background-color:#f0e3e3;
+}
+.bg {
+width:100%;
+heidht:100%;
+z-index:0001;
+}
+.i2{
+float:left;
+    margin-right: 41px;
+    width: 150px;
+    margin-left: 24px;
+}
+@media (max-width: 1700px) {
+.inf{
+padding:15px;
+width:1200px;
+margin-left:200px;
+height: 100%;
+margin: auto;
+}
+}
+.header {
+    height: 165px;
+}
+#p2 {
+padding-top:0px;
+}
+br {
+display:none
+}
+#hh5{
+margin:0px;
+padding:0px;
+    font-size: 24px;
+    font-family: Arial;
+    color: #463b27;
+}
+#hh1{
+
+margin:0px;
+padding:0px;
+font-size: 48px;
+    font-family: Triforce;
+    color: #463b27;
+	    padding-top: 32px;
+}
+.vpv {
+background-color:black;
+color:white;
+height:53px;
+width:90%;
+float:left;
+    line-height: 53px;
+    font-size: 24px;
+    cursor: pointer;
+	    margin: 0 5%;
+}
+.vpv img {
+    height: 43px;
+    float: left;
+    margin: 5px;
+    margin-right: 10px;
+}
+.menu {
+padding: 2%;
+border-color:black;
+}
+.col6 {
+	width:16.66%;
+	float: left;
+}
+.cont {
+	    min-height: 500px;
+    width: 90%;
+    background-color: white;
+    float: left;
+    margin-top: 30px;
+    box-shadow: 0px 0px 20px 0px black;
+    padding: 5%;
+    text-align: center;
+}
+.nv, .nv2 {
+	display:none;
+	    border: 1px solid #6f6969;
+    box-shadow: 0px 0px 7px 3px #d6c7c7;
+    margin-bottom: 20px;
+    text-align: left;
+    float: left;
+    width: 100%;
+	position:relative;
+}
+.nv img, .nv2 img {
+	        float: left;
+    margin-right: 40px;
+    z-index: 1000;
+    position: relative;
+	    width: 400;
+}
+.nv h2, .nv2 h2 {
+    font-size: 36px;
+    font-family: Arial;
+}
+.nv p, .nv2 p {
+	    font-size: 18px;
+    font-family: Arial;
+}
+.nn, .nn1, .nn2{
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    border: 1px solid black;
+    border-color: black;
+    display: inline-block;
+    line-height: 30px;
+    font-size: 20px;
+    margin: 5px;
+}
+.nn:hover, .nn1:hover, .nn2:hover {
+	cursor: pointer;
+	background-color: #cfcfcf;
+}
+.footer {
+float: left;
+    width: 100%;
+    padding: 40px 0px;
+    font-size: 24px;
+    font-weight: bold;
+}
+.m{
+float:left;
+}
+
+.m2{
+float:right;
+}
+
+.info {
+    height: 50px;
+    width: 100%;
+    background: #f0e3e3;
+    bottom: 0px;
+    position: absolute;
+    z-index: 1;
+    text-align: right;
+    line-height: 50px;
+    padding: 0px 20px;
+    font-size: 18px;
+    font-family: Arial;
+    box-sizing: border-box;
+	}
+.nv a, .nv2 a {
+	color: black;
+    text-decoration: none;
+}
+.nv {
+	display:block;
+}
+.number:hover (
+</style>
+</head>
+<body>
+
+<div class='o2'>
+
+<div class='inf'>
+<div class='header'><img class='i2' src='img\logo.png'><p id='p2'><b><h1 id='hh1'>Блог программиста</h1></b><br><h5 id='hh5'>Программист - не профессия, а образ мышления!</h5></p> </div>
+<div class='menu'>   
+	<div class="col6"> <div class='vpv'  onmouseover="changecolor(this);" onmouseout="back(this);"><img src='img/Home.png'>Главная</div> </div>   
+	<div class="col6"> <div class='vpv'  onmouseover="changecolor(this);" onmouseout="back(this);">текст2</div></div>    
+	<div class="col6"> <div class='vpv'  onmouseover="changecolor(this);" onmouseout="back(this);"></div></div>
+	<div class="col6"> <div class='vpv'  onmouseover="changecolor(this);" onmouseout="back(this);"></div></div>
+	<div class="col6"> <div class='vpv'  onmouseover="changecolor(this);" onmouseout="back(this);"></div></div>
+	<div class="col6"> <div class='vpv'  onmouseover="changecolor(this);" onmouseout="back(this);">
+	</div></div>
+</div>
+
+<div class='cont'>
+	<div class='nv'><img src='{{img}}' onclick ='p1' ><a href='/record?id={{id}}'> <p><h2>{{title}}</h2></p></a>  <p>{{txt}}</p> <div class="info">22.10.2017 | {{pio}} комментариев </div></div>
+	<div class='nv'><img src='{{img}}' onclick ='p1'><a href='/record?id={{id}}'> <p><h2>{{title}}</h2></p></a>  <p>{{txt}}</p> <div class="info">22.10.2017 | {{pio}} комментариев </div></div>
+	<div class='nv'><img src='{{img}}' onclick ='p1'><a href='/record?id={{id}}'> <p><h2>{{title}}</h2></p></a>  <p>{{txt}}</p> <div class="info">22.10.2017 | {{pio}} комментариев </div></div>
+	<div class='nv'><img src='{{img}}' onclick ='p1'><a href='/record?id={{id}}'> <p><h2>{{title}}</h2></p></a>  <p>{{txt}}</p> <div class="info">22.10.2017 | {{pio}} комментариев </div></div>
+	
+	<div class='nv2'><img src='{{imgp2}}' onclick ='p2'><a href='/record?id={{id2}}'> <p><h2>{{titlep2}}</h2></p></a>  <p>{{txt}}</p> <div class="info">22.10.2017 | {{pio}} комментариев </div></div>
+	<div class='nv2'><img src='{{imgp2}}' onclick ='p2'><a href='/record?id={{id2}}'> <p><h2>{{titlep2}}</h2></p></a>  <p>{{txt}}</p> <div class="info">22.10.2017 | {{pio}} комментариев </div></div>
+	<div class='nv2'><img src='{{imgp2}}' onclick ='p2'><a href='/record?id={{id2}}'> <p><h2>{{titlep2}}</h2></p></a>  <p>{{txt}}</p> <div class="info">22.10.2017 | {{pio}} комментариев </div></div>
+	<div class='nv2'><img src='{{imgp2}}' onclick ='p2'><a href='/record?id={{id2}}'> <p><h2>{{titlep2}}</h2></p></a>  <p>{{txt}}</p> <div class="info">22.10.2017 | {{pio}} комментариев </div></div>
+	
+	<div class="group">
+	<div class='nn1 number' onclick='pg1()'>1</div>
+	<div class='nn2 number' onclick='pg2()'>2</div>
+	<div class='nn number'>...</div>
+	<div class='nn number'>10</div>
+	</div>
+
+</div>
+<div class='footer'><div class='m'><p>&copy 2017 Новиков Богдан </p></div> <div class='m2'><p>E-mail:</p></div> </div>
+</div>
+</div>
+<script>
+function p1() {
+	var sccc = 1;
+}
+
+function p2() {
+	var sccc= 2;
+}
+
+
+function pg2(){
+		document.getElementsByClassName('nn2')[0].setAttribute('style','background-color: grey');
+		document.getElementsByClassName('nn1')[0].setAttribute('style','background-color: white');
+
+
+for (var a=0; a<=3; a=a+1){
+	document.getElementsByClassName('nv2')[a].setAttribute('style','display:block');
+	document.getElementsByClassName('nv')[a].setAttribute('style','display:none');
+	}
+	}
+
+function pg1(){
+		document.getElementsByClassName('nn1')[0].setAttribute('style','background-color: gray');
+		document.getElementsByClassName('nn2')[0].setAttribute('style','background-color: white');
+
+	for (var a=0 ; a<=3 ; a=a+1){
+	document.getElementsByClassName('nv2')[a].setAttribute('style','display:none');
+	document.getElementsByClassName('nv')[a].setAttribute('style','display:block');
+	}
+}
+var f=false;
+function changecolor(ob){
+	var colors=['red','green','blue','grey','purple'];
+	var cl=Math.round(5*Math.random());	
+	if (!f) 
+		ob.setAttribute('style','background:'+colors[cl]);
+	f=true;
+}
+function back(ob){
+	f=false;
+	ob.setAttribute('style','background:black');
+}
+{{showpage}}
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+------WebKitFormBoundaryogMcNyfQRtoYkpov
+Content-Disposition: form-data; name="id"
+
+2
+------WebKitFormBoundaryogMcNyfQRtoYkpov
+Content-Disposition: form-data; name="name"
+
+
+------WebKitFormBoundaryogMcNyfQRtoYkpov
+Content-Disposition: form-data; name="email"
+
+
+------WebKitFormBoundaryogMcNyfQRtoYkpov
+Content-Disposition: form-data; name="av"; filename="test.txt"
+Content-Type: text/plain
+
+test text
+------WebKitFormBoundaryogMcNyfQRtoYkpov
+Content-Disposition: form-data; name="kom"
+
+
+------WebKitFormBoundaryogMcNyfQRtoYkpov--
