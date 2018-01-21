@@ -180,7 +180,68 @@ float:right;
 .nv {
 	display:block;
 }
-.number:hover (
+.nkm{
+	padding:5px;
+	
+    border: 1px solid black;
+    border-color: black;
+	margin-bottom:15px;
+}
+.nkm input {
+	border-radius: 5px;
+	border-color:black;
+	border: 1px solid black;
+}
+.p12 {
+	font-size: 18px;
+    font-weight: bold;
+}
+.p11 {
+	font-size: 24px;
+    font-weight: bold;
+}
+#inp11 {
+	height: 100px;
+	width: 500px;
+}
+.msge {
+	display:none;
+	z-index: 9000;
+	position: fixed;
+	top: 0px;
+	left:0px;
+	height: 100%;
+	width: 100%;
+	
+}
+.temnBG {
+	float: left;
+	height: 100%;
+	width: 100%;
+	z-index: 9000;
+	position: absolute	;
+	background-color:black;
+	opacity: 0.8;
+	
+}
+.okn {
+	margin-top: 400px;
+	margin-left: 500px;
+	width: 600px;
+	position: absolute;
+	background-color: white;
+	z-index: 9001;
+	
+	
+}
+#rl {
+	width: 100%;
+	background-color: red;
+	height: 50px;
+}
+
+
+
 </style>
 </head>
 <body>
@@ -195,8 +256,7 @@ float:right;
 	<div class="col6"> <div class='vpv'  onmouseover="changecolor(this);" onmouseout="back(this);"></div></div>
 	<div class="col6"> <div class='vpv'  onmouseover="changecolor(this);" onmouseout="back(this);"></div></div>
 	<div class="col6"> <div class='vpv'  onmouseover="changecolor(this);" onmouseout="back(this);"></div></div>
-	<div class="col6"> <div class='vpv'  onmouseover="changecolor(this);" onmouseout="back(this);">
-	</div></div>
+	<div class="col6"> <div class='vpv' onclick='shw()'  onmouseover="changecolor(this);" onmouseout="back(this);"> Обратная связь</div></div>
 </div>
 
 <div class='cont'>
@@ -222,6 +282,10 @@ float:right;
 </div>
 </div>
 <script>
+function shw(){
+	document.getElementsByClassName('msge')[0].setAttribute('style','display:block');
+}
+
 function p1() {
 	var sccc = 1;
 }
@@ -265,5 +329,28 @@ function back(ob){
 }
 {{showpage}}
 </script>
+
+<div class='msge'>
+<div class='temnBG'>
+</div>
+<div class='okn'>
+<div id='rl'>
+<div id='enk'>
+</div></div>
+<div class='nkm'>
+	<p class='p12'>написать сообщение</p>
+	<input type="hidden" value="{{id}}" name="id" >
+	<p>E-mail</p><br> <input name='email' type='text'>
+	<p>Комментарий</p><br> 
+	<textarea id='inp11' name='kom'></textarea>
+	<p></p> <br>
+	<input type='submit'  value='Отправить' onclick="();">
+</form>
+</div>	</div> </div>
+
+
+
+
 </body>
+
 </html>

@@ -79,11 +79,12 @@ http.createServer(function(request, response) {
         /* Location where we want to copy the uploaded file */
         //var new_location = 'img/';
  
-        fs.rename(temp_path, p, function(err) {  
+        fs.copyFile(temp_path, p, function(err) {  
             if (err) {
                 console.error(err);
             } else {
                 console.log("success!")
+				fs.unlinkSync(temp_path)
             }
         });
 		}
