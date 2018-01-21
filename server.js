@@ -13,7 +13,7 @@ var imges = ['img/00001.jpg','img/00002.jpg','img/00003.jpg','img/00004.jpg','im
 var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
     ip   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
 
-http.createServer(function(request, response) {
+var app = http.createServer(function(request, response) {
 	var requrl = url.parse(request.url, true);
 	var d="";
 	var id = 0;
@@ -252,4 +252,7 @@ http.createServer(function(request, response) {
 		response.write("Not found");
 		response.end();*/
 	}
-}).listen(port, ip);
+});
+app.listen(port, ip);
+
+module.exports = app;
