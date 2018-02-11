@@ -70,15 +70,16 @@ font-size: 48px;
 	    padding-top: 32px;
 }
 .vpv {
-background-color:black;
-color:white;
-height:53px;
-width:90%;
-float:left;
+	background-color:black;
+	color: white;
+    height: 53px;
+    width: 90%;
+    float: left;
     line-height: 53px;
-    font-size: 24px;
+    font-size: 18px;
     cursor: pointer;
-	    margin: 0 5%;
+    margin: 0 5%;
+    text-align: center;
 }
 .vpv img {
     height: 43px;
@@ -240,23 +241,37 @@ float:right;
 	height: 50px;
 }
 
+#cls {
+    height: 50px;
+    background-color: grey;
+    float: right;
+    font-size: 40px;
+    line-height: 53px;
+    cursor: pointer;
+    padding-left: 10;
+    padding-right: 10;
 
+}
+.vpv.active {
+	background-color:#9c9c9c !important;
+}
 
 </style>
+
 </head>
 <body>
 
 <div class='o2'>
 
 <div class='inf'>
-<div class='header'><img class='i2' src='img\logo.png'><p id='p2'><b><h1 id='hh1'>Блог программиста</h1></b><br><h5 id='hh5'>Программист - не профессия, а образ мышления!</h5></p> </div>
+<div class='header'><img class='i2' src='\img\logo.png'><p id='p2'><b><h1 id='hh1'>Блог программиста</h1></b><br><h5 id='hh5'>Программист - не профессия, а образ мышления!</h5></p> </div>
 <div class='menu'>   
-	<div class="col6"> <div class='vpv'  onmouseover="changecolor(this);" onmouseout="back(this);"><img src='img/Home.png'>Главная</div> </div>   
-	<div class="col6"> <div class='vpv'  onmouseover="changecolor(this);" onmouseout="back(this);">текст2</div></div>    
-	<div class="col6"> <div class='vpv'  onmouseover="changecolor(this);" onmouseout="back(this);"></div></div>
-	<div class="col6"> <div class='vpv'  onmouseover="changecolor(this);" onmouseout="back(this);"></div></div>
-	<div class="col6"> <div class='vpv'  onmouseover="changecolor(this);" onmouseout="back(this);"></div></div>
-	<div class="col6"> <div class='vpv' onclick='shw()'  onmouseover="changecolor(this);" onmouseout="back(this);"> Обратная связь</div></div>
+	<div class="col6"> <div class='vpv active'  onmouseover="changecolor(this);" onmouseout="back(this);" onclick="select(this)"><img src='/img/Home.png'>Главная</div> </div>   
+	<div class="col6"> <div class='vpv'  onmouseover="changecolor(this);" onmouseout="back(this);" onclick="select(this); window.location.href = '/posts/1';">{{sectionname}}</div></div>    
+	<div class="col6"> <div class='vpv'  onmouseover="changecolor(this);" onmouseout="back(this);" onclick="select(this);">{{sectionname}}</div></div>
+	<div class="col6"> <div class='vpv'  onmouseover="changecolor(this);" onmouseout="back(this);" onclick="select(this);">{{sectionname}}</div></div>
+	<div class="col6"> <div class='vpv'  onmouseover="changecolor(this);" onmouseout="back(this);" onclick="select(this);">{{sectionname}}</div></div>
+	<div class="col6"> <div class='vpv' onclick='shw()'  onmouseover="changecolor(this);" onmouseout="back(this);" onclick="select(this);"> Обратная связь</div></div>
 </div>
 
 <div class='cont'>
@@ -281,9 +296,14 @@ float:right;
 <div class='footer'><div class='m'><p>&copy 2017 Новиков Богдан </p></div> <div class='m2'><p>E-mail:</p></div> </div>
 </div>
 </div>
+<script src="/js/jquery-3.3.1.min.js"></script>
 <script>
 function shw(){
 	document.getElementsByClassName('msge')[0].setAttribute('style','display:block');
+}
+
+function hi(){
+	document.getElementsByClassName('msge')[0].setAttribute('style','display:none');
 }
 
 function p1() {
@@ -292,6 +312,20 @@ function p1() {
 
 function p2() {
 	var sccc= 2;
+}
+
+function sndmsg() {
+	var d = {email: document.getElementsByName('email')[0].value, kom: document.getElementsByName('kom')[0].value};
+	alert(d.email);
+	alert(d.kom);
+		
+	$.ajax ({
+		method: 'POST',
+		url: '/savecomment',
+		data: {email: document.getElementsByName('email')[0].value, kom: document.getElementsByName('kom')[0].value}
+	}).done(function (msg){
+				alert(msg);
+				})
 }
 
 
@@ -323,6 +357,10 @@ function changecolor(ob){
 		ob.setAttribute('style','background:'+colors[cl]);
 	f=true;
 }
+function select(obj) {
+	$(".vpv").removeClass("active");
+	$(obj).addClass("active");
+}
 function back(ob){
 	f=false;
 	ob.setAttribute('style','background:black');
@@ -335,6 +373,7 @@ function back(ob){
 </div>
 <div class='okn'>
 <div id='rl'>
+<div id = 'cls' onclick='hi()'>    &#10006;</div>
 <div id='enk'>
 </div></div>
 <div class='nkm'>
@@ -344,7 +383,7 @@ function back(ob){
 	<p>Комментарий</p><br> 
 	<textarea id='inp11' name='kom'></textarea>
 	<p></p> <br>
-	<input type='submit'  value='Отправить' onclick="();">
+	<input type='button'  value='Отправить' onclick="sndmsg();">
 </form>
 </div>	</div> </div>
 

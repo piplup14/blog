@@ -4,15 +4,26 @@ var fs = require("fs");
 var url = require('url');
 var path = require('path');
 var formidable = require('formidable');
+
+var db = require('./db.js');
+
 var titles = ['Tigers','Lions','Zebras','Butterfly','Hyenas','Jackals','Moles','Lemurs'];
 var txts = ['тигры','львы','зебры','бабочки','гиены','шакалы','кроты','лемуры'];
 var posts = ["tiger.html","","","","","","","","",""];
 var comments = [[{name : "user1", email : "user1@test.ru", kom :"Текст комментария"}], 
 				[{name : "user2", email : "user2@test.ru", kom :"Текст комментария", img : "/img/00004.jpg"}], [], [], [], [], [], [], []];
-var imges = ['img/00001.jpg','img/00002.jpg','img/00003.jpg','img/00004.jpg','img/q/Hyena.jpg','img/q/Jackal.jpg','img/q/Mole.jpg','img/q/Lemur.jpg'];
+var imges = ['/img/00001.jpg','/img/00002.jpg','/img/00003.jpg','/img/00004.jpg','/img/q/Hyena.jpg','/img/q/Jackal.jpg','/img/q/Mole.jpg','/img/q/Lemur.jpg'];
+var sections = [];
+
 var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
     ip   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
 
+	var datab = new db.Db("mongodb://localhost:27017/blog");
+	datab.getSections(function(err, results){
+             sections = results;
+			console.log(results);
+		});
+	
 var app = http.createServer(function(request, response) {
 	var requrl = url.parse(request.url, true);
 	var d="";
@@ -117,6 +128,88 @@ var app = http.createServer(function(request, response) {
 		
 	} else
 /***************************************
+сщчранение сообщения
+***************************************/	
+	if (requrl.pathname == "/savecomment"){
+		var form = formidable.IncomingForm();
+		form.parse(request,function(err,fields,files){
+			console.log(fields);
+			fs.appendFileSync('комментарии.txt','email: '+fields.email+'\ncomments: '+fields.kom + "\n\n")	
+		response.writeHead(200, {"Content-Type": "text/html"});
+		response.write('комментарий успешно сохранён');
+		response.end();
+		})
+	} else
+		
+/***************************************
+Отдельная запись
+***************************************/	
+	if (requrl.pathname == "/posts/1"){
+		response.writeHead(200, {"Content-Type": "text/html"});
+  var html = fs.readFileSync("блог.html","utf8");
+	while(html.indexOf('22.10.2017') + 1) {
+		var now = new Date();
+	
+		html = html.replace ('22.10.2017',now.getDate()+'.'+(now.getMonth()+1)+'.'+now.getFullYear());
+	}
+
+	while(html.indexOf('sccc=1') + 1) {
+		var gh = 1;
+		var html = fs.readFileSync("запись.html","utf8");
+		html = html.replace ('{{param}}',gh);
+	}
+
+	while(html.indexOf('sccc=2') + 1) {
+		var gh = 2;
+		var html = fs.readFileSync("запись.html","utf8");
+		html = html.replace ('{{param}}',gh);
+	}
+	
+	for (var i =0; i<4; i++){
+			html = html.replace('{{sectionname}}',(sections.length>i)?sections[i].name:"");
+	}
+	
+	
+	datab.getPosts(sections[0], function(err, res){
+		console.log(res[0]);
+		for (var a=0; a<4; a=a+1){
+		if (a<res[0].posts.length) {
+		html = html.replace('{{title}}',res[0].posts[a].name);
+		html = html.replace('{{txt}}',res[0].posts[a].description);
+		html = html.replace('{{img}}',"/"+res[0].posts[a].img);
+		}
+		else {
+			html = html.replace('{{title}}',titles[a]);
+		html = html.replace('{{txt}}',txts[a]);
+		html = html.replace('{{img}}',imges[a]);
+		}
+		html = html.replace('{{id}}',a+1);
+		html = html.replace('{{pio}}',comments[a].length);
+	}
+
+	for (var a=4; a<9; a=a+1){
+		html = html.replace('{{titlep2}}',titles[a]);
+		html = html.replace('{{txt}}',txts[a]);
+		html = html.replace('{{imgp2}}',imges[a]);
+		html = html.replace('{{id2}}',a+1)
+		html = html.replace('{{pio}}',comments[a].length);
+	}
+	var page = requrl.query.page;
+	if (!page)
+		page=1;
+	html = html.replace('{{showpage}}', "pg"+page+"();");
+	
+	
+
+
+	response.write(html);
+	response.end();
+	})
+	
+
+	
+	} else 
+/***************************************
 Отдельная запись
 ***************************************/	
 	if (requrl.pathname == "/record"){
@@ -173,6 +266,10 @@ var app = http.createServer(function(request, response) {
 		var gh = 2;
 		var html = fs.readFileSync("запись.html","utf8");
 		html = html.replace ('{{param}}',gh);
+	}
+	
+	for (var i =0; i<4; i++){
+			html = html.replace('{{sectionname}}',(sections.length>i)?sections[i].name:"");
 	}
 
 	for (var a=0; a<4; a=a+1){

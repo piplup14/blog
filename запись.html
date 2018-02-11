@@ -240,12 +240,12 @@ float:right;
 <div class='inf'>
 <div class='header'><img class='i2' src='/img/logo.png'><p id='p2'><b><h1 id='hh1'>Блог программиста</h1></b><br><h5 id='hh5'>Программист - не профессия, а образ мышления!</h5></p> </div>
 <div class='menu'>   
-	<div class="col6"> <div class='vpv'  onmouseover="changecolor(this);" onmouseout="back(this);"><img src='/img/Home.png'><a href='/blog'>Главная</div></a> </div>   
-	<div class="col6"> <div class='vpv'  onmouseover="changecolor(this);" onmouseout="back(this);">текст2</div></div>    
-	<div class="col6"> <div class='vpv'  onmouseover="changecolor(this);" onmouseout="back(this);"></div></div>
-	<div class="col6"> <div class='vpv'  onmouseover="changecolor(this);" onmouseout="back(this);"></div></div>
-	<div class="col6"> <div class='vpv'  onmouseover="changecolor(this);" onmouseout="back(this);"></div></div>
-	<div class="col6"> <div class='vpv'  onmouseover="changecolor(this);" onmouseout="back(this);"></div></div>
+	<div class="col6"> <div class='vpv active'  onmouseover="changecolor(this);" onmouseout="back(this);" onclick="select(this)"><img src='/img/Home.png'>Главная</div> </div>   
+	<div class="col6"> <div class='vpv'  onmouseover="changecolor(this);" onmouseout="back(this);" onclick="select(this); window.location.href = '/posts/1';"></div></div>    
+	<div class="col6"> <div class='vpv'  onmouseover="changecolor(this);" onmouseout="back(this);" onclick="select(this);"></div></div>
+	<div class="col6"> <div class='vpv'  onmouseover="changecolor(this);" onmouseout="back(this);" onclick="select(this);"></div></div>
+	<div class="col6"> <div class='vpv'  onmouseover="changecolor(this);" onmouseout="back(this);" onclick="select(this);"></div></div>
+	<div class="col6"> <div class='vpv' onclick='shw()'  onmouseover="changecolor(this);" onmouseout="back(this);" onclick="select(this);"> Обратная связь</div></div>
 </div>
 
   <div class='cont'>
@@ -307,6 +307,12 @@ function addcoment(){
 	var t=document.getElementById('inp11').value;
   newLi.innerHTML = "<div class='cm'><img class='imgcm' src='C:\\Users\\User\\Desktop\\Всё\\карт\\00004.jpg'><p>"+n+"</p><br><p>"+t+"</p></div>";
 	coms.appendChild(newLi);
+	
+	
+function select(obj) {
+	$(".vpv").removeClass("active");
+	$(obj).addClass("active");
+}
 }
 </script>
 </body>
