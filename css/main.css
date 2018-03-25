@@ -1,0 +1,310 @@
+@font-face {
+    font-family: Triforce; /* Гарнитура шрифта */
+    src: url(/fonts/10921.otf); /* Путь к файлу со шрифтом */
+   }
+
+
+@media (min-width: 1700px) and (max-width: 2100px) {
+.inf{
+padding:15px;
+width:1600px;
+margin-left:200px;
+height: 100%;
+margin: auto;
+}
+}
+
+body {
+	background: #f0e3e3;
+}
+.o2 {
+background-color:#f0e3e3;
+}
+.bg {
+width:100%;
+heidht:100%;
+z-index:0001;
+}
+.i2{
+float:left;
+    margin-right: 41px;
+    width: 150px;
+    margin-left: 24px;
+}
+@media (max-width: 1700px) {
+.inf{
+padding:15px;
+width:1200px;
+margin-left:200px;
+height: 100%;
+margin: auto;
+}
+}
+
+.header {
+    height: 165px;
+}
+#p2 {
+padding-top:0px;
+}
+br {
+display:none
+}
+#hh5{
+margin:0px;
+padding:0px;
+    font-size: 24px;
+    font-family: Arial;
+    color: #463b27;
+}
+#hh1{
+
+margin:0px;
+padding:0px;
+font-size: 48px;
+    font-family: Triforce;
+    color: #463b27;
+	    padding-top: 32px;
+}
+.vpv {
+	background-color:black;
+	color: white;
+    height: 53px;
+    width: 90%;
+    float: left;
+    line-height: 53px;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 0 5%;
+    text-align: center;
+}
+.vpv img {
+    height: 43px;
+    float: left;
+    margin: 5px;
+    margin-right: 10px;
+}
+.menu {
+padding: 2%;
+border-color:black;
+}
+.col6 {
+	width:16.66%;
+	float: left;
+}
+
+.col6 a {
+	color: white;
+    text-decoration: none;
+}
+
+.cont {
+	    min-height: 500px;
+    width: 90%;
+    background-color: white;
+    float: left;
+    margin-top: 30px;
+    box-shadow: 0px 0px 20px 0px black;
+    padding: 5%;
+    text-align: center;
+}
+.nv, .nv2, .card {
+	display:none;
+	    border: 1px solid #6f6969;
+    box-shadow: 0px 0px 7px 3px #d6c7c7;
+    margin-bottom: 20px;
+    text-align: left;
+    float: left;
+    width: 100%;
+	position:relative;
+}
+.nv img, .nv2 img, .card img {
+	        float: left;
+    margin-right: 40px;
+    z-index: 1000;
+    position: relative;
+	    width: 400;
+}
+.nv h2, .nv2 h2, .card h2 {
+    font-size: 36px;
+    font-family: Arial;
+}
+.nv p, .nv2 p, .card p {
+	    font-size: 18px;
+    font-family: Arial;
+}
+.nn, .nn1, .nn2, .nn3, .nn4, .nn5{
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    border: 1px solid black;
+    border-color: black;
+    display: inline-block;
+    line-height: 30px;
+    font-size: 20px;
+    margin: 5px;
+}
+.nn:hover, .nn1:hover, .nn2:hover, .nn3:hover, .nn4:hover, .nn5:hover {
+	cursor: pointer;
+	background-color: #cfcfcf;
+}
+.footer {
+float: left;
+    width: 100%;
+    padding: 40px 0px;
+    font-size: 24px;
+    font-weight: bold;
+}
+.m{
+float:left;
+}
+
+.m2{
+float:right;
+}
+
+.info {
+    height: 50px;
+    width: 100%;
+    background: #f0e3e3;
+    bottom: 0px;
+    position: absolute;
+    z-index: 1;
+    text-align: right;
+    line-height: 50px;
+    padding: 0px 20px;
+    font-size: 18px;
+    font-family: Arial;
+    box-sizing: border-box;
+	}
+.ni1 {
+	z-index: 500;
+	width:100%;
+	/*height: 360px;*/
+	
+	
+}
+.ni2 {
+	z-index:501;
+	
+}
+.nv a, .nv2 a, .card a {
+	color: black;
+    text-decoration: none;
+}
+.nv {
+	display:block;
+}
+.hd {
+	width:100%;
+}
+.nkm{
+	padding:5px;
+	
+    border: 1px solid black;
+    border-color: black;
+	margin-bottom:15px;
+}
+.nkm input {
+	border-radius: 5px;
+	border-color:black;
+	border: 1px solid black;
+}
+.p12 {
+	font-size: 18px;
+    font-weight: bold;
+}
+.p11 {
+	font-size: 24px;
+    font-weight: bold;
+}
+#inp11 {
+	height: 100px;
+	width: 500px;
+}
+.msge {
+	display:none;
+	z-index: 9000;
+	position: fixed;
+	top: 0px;
+	left:0px;
+	height: 100%;
+	width: 100%;
+	
+}
+.temnBG {
+	float: left;
+	height: 100%;
+	width: 100%;
+	z-index: 9000;
+	position: absolute	;
+	background-color:black;
+	opacity: 0.8;
+	
+}
+.okn {
+	margin-top: 400px;
+	margin-left: 500px;
+	width: 600px;
+	position: absolute;
+	background-color: white;
+	z-index: 9001;
+	
+	
+}
+#rl {
+	width: 100%;
+	background-color: red;
+	height: 50px;
+}
+
+#cls {
+    height: 50px;
+    background-color: grey;
+    float: right;
+    font-size: 40px;
+    line-height: 53px;
+    cursor: pointer;
+    padding-left: 10;
+    padding-right: 10;
+
+}
+.vpv.active {
+	background-color:#9c9c9c !important;
+}
+
+.com{
+	float:left;
+	text-align: left;
+	border:1px solid black;
+	padding:5px;
+	
+}
+.nkm{
+	padding:5px;
+	
+    border: 1px solid black;
+    border-color: black;
+	margin-bottom:15px;
+}
+.nkm input {
+	border-radius: 5px;
+	border-color:black;
+	border: 1px solid black;
+}
+.p12 {
+	font-size: 18px;
+    font-weight: bold;
+}
+.cm {
+	border: 1px solid black;
+	border-radius: 10px;
+	padding:5px;
+	margin: 5px;
+	    min-height: 50px;
+}
+.imgcm {
+	height: 45px;
+	wight: 45px;
+	float:left;
+}

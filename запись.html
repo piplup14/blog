@@ -1,237 +1,7 @@
 ﻿<html>
 <head>
 <title>Запись</title>
-<style>
-@font-face {
-    font-family: Triforce; /* Гарнитура шрифта */
-    src: url(fonts/10921.otf); /* Путь к файлу со шрифтом */
-   }
-
-
-@media (min-width: 1700px) and (max-width: 2100px) {
-.inf{
-padding:15px;
-width:1600px;
-margin-left:200px;
-height: 100%;
-margin: auto;
-}
-}
-
-body {
-	background: #f0e3e3;
-}
-.o2 {
-background-color:#f0e3e3;
-}
-.bg {
-width:100%;
-height:100%;
-z-index:0001;
-}
-.i2{
-float:left;
-    margin-right: 41px;
-    width: 150px;
-    margin-left: 24px;
-}
-@media (max-width: 1700px) {
-.inf{
-padding:15px;
-width:1200px;
-margin-left:200px;
-height: 100%;
-margin: auto;
-}
-}
-.header {
-    height: 165px;
-}
-#p2 {
-padding-top:0px;
-}
-br {
-display:none
-}
-#hh5{
-margin:0px;
-padding:0px;
-    font-size: 24px;
-    font-family: Arial;
-    color: #463b27;
-}
-#hh1{
-
-margin:0px;
-padding:0px;
-font-size: 48px;
-    font-family: Triforce;
-    color: #463b27;
-	    padding-top: 32px;
-}
-.vpv {
-background-color:black;
-color:white;
-height:53px;
-width:90%;
-float:left;
-    line-height: 53px;
-    font-size: 24px;
-    cursor: pointer;
-	    margin: 0 5%;
-}
-.vpv img {
-    height: 43px;
-    float: left;
-    margin: 5px;
-    margin-right: 10px;
-}
-.menu {
-padding: 2%;
-border-color:black;
-}
-.col6 {
-	width:16.66%;
-	float: left;
-}
-.col6 a {
-	color: white;
-    text-decoration: none;
-}
-.cont {
-	    min-height: 500px;
-    width: 90%;
-    background-color: white;
-    float: left;
-    margin-top: 30px;
-    box-shadow: 0px 0px 20px 0px black;
-    padding: 5%;
-    text-align: center;
-}
-.nv {
-	    border: 1px solid #6f6969;
-    box-shadow: 0px 0px 7px 3px #d6c7c7;
-    margin-bottom: 20px;
-    text-align: left;
-    float: left;
-    width: 100%;
-	position:relative;
-}
-.nv img {
-	        float: left;
-    margin-right: 40px;
-    z-index: 1000;
-    position: relative;
-}
-.nv h2 {
-    font-size: 36px;
-    font-family: Arial;
-}
-.nv p {
-	    font-size: 18px;
-    font-family: Arial;
-}
-.nn{
-    width: 30px;
-    height: 30px;
-    border-radius: 15px;
-    border: 1px solid black;
-    border-color: black;
-    display: inline-block;
-    line-height: 30px;
-    font-size: 20px;
-    margin: 5px;
-}
-.nn:hover {
-	cursor: pointer;
-}
-.footer {
-float: left;
-    width: 100%;
-    padding: 40px 0px;
-    font-size: 24px;
-    font-weight: bold;
-}
-.m{
-float:left;
-}
-
-.m2{
-float:right;
-}
-
-.info {
-    height: 50px;
-    width: 100%;
-    background: #f0e3e3;
-    bottom: 0px;
-    position: absolute;
-    z-index: 1;
-    text-align: right;
-    line-height: 50px;
-    padding: 0px 20px;
-    font-size: 18px;
-    font-family: Arial;
-    box-sizing: border-box;
-	}
-.ni1 {
-	z-index: 500;
-	width:100%;
-	/*height: 360px;*/
-	
-	
-}
-.ni2 {
-	z-index:501;
-	
-}
-.hd {
-	width:100%;
-}
-.p11 {
-	font-size: 24px;
-    font-weight: bold;
-}
-#inp11 {
-	height: 100px;
-	width: 500px;
-}
-.com{
-	float:left;
-	text-align: left;
-	border:1px solid black;
-	padding:5px;
-	
-}
-.nkm{
-	padding:5px;
-	
-    border: 1px solid black;
-    border-color: black;
-	margin-bottom:15px;
-}
-.nkm input {
-	border-radius: 5px;
-	border-color:black;
-	border: 1px solid black;
-}
-.p12 {
-	font-size: 18px;
-    font-weight: bold;
-}
-.cm {
-	border: 1px solid black;
-	border-radius: 10px;
-	padding:5px;
-	margin: 5px;
-	
-}
-.imgcm {
-	height: 45px;
-	wight: 45px;
-	float:left;
-}
-</style>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
 </head>
 <body>
 
@@ -240,17 +10,17 @@ float:right;
 <div class='inf'>
 <div class='header'><img class='i2' src='/img/logo.png'><p id='p2'><b><h1 id='hh1'>Блог программиста</h1></b><br><h5 id='hh5'>Программист - не профессия, а образ мышления!</h5></p> </div>
 <div class='menu'>   
-	<div class="col6"> <div class='vpv active'  onmouseover="changecolor(this);" onmouseout="back(this);" onclick="select(this)"><img src='/img/Home.png'>Главная</div> </div>   
-	<div class="col6"> <div class='vpv'  onmouseover="changecolor(this);" onmouseout="back(this);" onclick="select(this); window.location.href = '/posts/1';"></div></div>    
-	<div class="col6"> <div class='vpv'  onmouseover="changecolor(this);" onmouseout="back(this);" onclick="select(this);"></div></div>
-	<div class="col6"> <div class='vpv'  onmouseover="changecolor(this);" onmouseout="back(this);" onclick="select(this);"></div></div>
-	<div class="col6"> <div class='vpv'  onmouseover="changecolor(this);" onmouseout="back(this);" onclick="select(this);"></div></div>
+	<div class="col6"> <div class='vpv active'  onmouseover="changecolor(this);" onmouseout="back(this);" onclick="select(this); window.location.href = '/';"><img src='/img/Home.png'>Главная</div> </div>   
+	<div class="col6"> <div  id={{sectionid}} class='vpv' onmouseover="changecolor(this);" onmouseout="back(this);" onclick="select(this); window.location.href = '/posts/{{hrefid}}';">{{sectionname}}</div></div>    
+	<div class="col6"> <div  id={{sectionid}} class='vpv' onmouseover="changecolor(this);" onmouseout="back(this);" onclick="select(this); window.location.href = '/posts/{{hrefid}}';">{{sectionname}}</div></div>
+	<div class="col6"> <div id={{sectionid}} class='vpv'  onmouseover="changecolor(this);" onmouseout="back(this);" onclick="select(this); window.location.href = '/posts/{{hrefid}}';">{{sectionname}}</div></div>
+	<div class="col6"> <div id={{sectionid}} class='vpv' onmouseover="changecolor(this);" onmouseout="back(this);" onclick="select(this); window.location.href = '/posts/{{hrefid}}';">{{sectionname}}</div></div>
 	<div class="col6"> <div class='vpv' onclick='shw()'  onmouseover="changecolor(this);" onmouseout="back(this);" onclick="select(this);"> Обратная связь</div></div>
 </div>
 
   <div class='cont'>
   
-	<a href="/blog{{param}}">Список публикаций</a> 	&gt; Заголовок
+	<a href="/posts{{param}}">Список публикаций</a> 	&gt; Заголовок
 	<div class='hd'><img class='ni1' src='{{img}}'><p class='ni2'>Заголовок</p></div>
 	{{text}}
 <!-- <div class="group"><div class='nn'>1</div>
@@ -264,6 +34,7 @@ float:right;
 	<p class='p12'>Добавить коментарий</p>
 	<form method="post" action='/comments' enctype="multipart/form-data">
 	<input type="hidden" value="{{id}}" name="id" >
+	<input type="hidden" value="{{razdel}}" name="postname" >
 	<p>Имя</p><br> <input name='name' type='text'>
 	<p>E-mail</p><br> <input name='email' type='text'>
 	<p>Аватар</p><br> <input type='file' name='av'>
@@ -285,6 +56,7 @@ float:right;
 <div class='footer'><div class='m'><p>&copy 2017 Новиков Богдан </p></div> <div class='m2'><p>E-mail:</p></div> </div>
 </div>
 </div>
+<script src="/js/jquery-3.3.1.min.js"></script>
 <script>
 var f=false;
 function changecolor(ob){
@@ -307,13 +79,13 @@ function addcoment(){
 	var t=document.getElementById('inp11').value;
   newLi.innerHTML = "<div class='cm'><img class='imgcm' src='C:\\Users\\User\\Desktop\\Всё\\карт\\00004.jpg'><p>"+n+"</p><br><p>"+t+"</p></div>";
 	coms.appendChild(newLi);
-	
+}	
 	
 function select(obj) {
 	$(".vpv").removeClass("active");
 	$(obj).addClass("active");
 }
-}
+
 </script>
 </body>
 </html>
