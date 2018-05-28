@@ -1,0 +1,54 @@
+<!DOCTYPE>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<title> изменить пост  </title>
+</head>
+<body>
+<style>
+	.img {
+		width : 50px;
+	}
+
+</style>
+<input type="button" value="на основную страницу" onclick="javascript:window.location='/adminmain'"/>
+
+	<h1> Изменение данных поста</h1>
+<div class='nkm'>
+	<form method="post" action='/editform' enctype="multipart/form-data">
+	<input type="hidden" value="{{number}}" name="postnumber" >
+	<input type="hidden" value="{{razdel}}" name="razdel" >
+	<p> Раздел </p> <select name='section'> {{options}}</select>
+	<p>Название</p><br> <input name='name' type='text' value='{{name}}'>
+	<p>описание</p><br> <input name='description' type='text' value='{{description}}'>
+	<p>Картинка</p><br> <input type='file' name='img'>
+	{{imgaddres}}
+	<p>Содержимое поста</p> <input type='file' name='content'> <br> 
+	{{filesrc}}
+	<p></p> <br>
+	<input type='submit'  value='Сохранить изменения' onclick="addcoment();">
+	<input type='button' value='Удалить' onclick="document.location='deletepost?id={{id}}&section={{section}}'">
+</form>
+{{comments}}
+	</div>
+	
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script>	
+function deletemsg(ob, section, post, comment) {
+	var d = {section: section, post : post, kom: comment};
+	//alert(d.email);
+	//alert(d.kom);
+		
+	$.ajax ({
+		method: 'POST',
+		url: '/deletecomment',
+		data: d
+	}).done(function (msg){
+				$(ob).parent().hide();
+				alert(msg);
+				})
+}
+</script>
+	
+</body>
+</html>

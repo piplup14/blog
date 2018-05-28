@@ -6,14 +6,19 @@
   "dependencies": {
     "chai": "^3.5.0",
     "chai-http": "^2.0.1",
+    "client-sessions": "^0.8.0",
+    "connect": "^3.6.6",
+    "cookie-parser": "^1.4.3",
     "ejs": "^2.4.1",
     "express": "^4.13.4",
+    "express-session": "^1.15.6",
     "formidable": "^1.1.1",
     "jquery": "^3.3.1",
     "mocha": "^2.4.5",
     "mongodb": "^2.2.34",
     "morgan": "^1.7.0",
-    "object-assign": "4.1.0"
+    "object-assign": "4.1.0",
+    "session": "^0.1.0"
   },
   "engine": {
     "node": "*",

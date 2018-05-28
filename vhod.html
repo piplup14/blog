@@ -1,0 +1,64 @@
+﻿<html>
+<head>
+	<title> Вход в режим администратора</title>
+<head>
+<body>
+		<!--<div class='vhod'><p class='p11'> Авторизация </p>
+			<div class='nkm'>
+			<p class='p12'>Добавить коментарий</p>
+			<form method="post" action='/comments' enctype="multipart/form-data">
+				<input type="hidden" value="{{id}}" name="id" >
+				<input type="hidden" value="{{razdel}}" name="postname" >
+				<p>Имя</p><br> <input name='name' type='text'>
+				<p>E-mail</p><br> <input name='email' type='text'>
+				<p>Аватар</p><br> <input type='file' name='av'>
+				<p>Комментарий</p><br> 
+				<textarea id='inp11' name='kom'></textarea>
+				<p></p> <br>
+				<input type='submit'  value='Отправить' onclick="addcoment();">
+			</form>
+	</div>
+<div class='coms'> 
+{{repl}}-->
+
+<div class="vhod">
+	<p class='p11'> Авторизация </p>
+	<form method = "post" action = "/auth">
+	<input id = "Login" name="login" type = "text" value = "Введите логин" onclick = "och(this)" >
+	<input id = "Ps" name="Ps" type = "text" value = "Введите пароль" onclick = "och(this)" >
+	<input type = "button" value = "Войти" onclick = "proverka()">
+	</form>
+</div>
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script>
+	function och(ob)
+	{
+		ob.setAttribute('value' , '');
+	}
+	
+	
+	function proverka()
+	{
+		/*var n=document.getElementById('Login').value;
+		var d=document.getElementById('Ps').value;
+		if (n == "admin" && d == "admin")
+			alert('Вы вошли')
+		else  alert ("Неправильный логин или пароль")*/
+		$.ajax ({
+		method: 'POST',
+		url: '/auth',
+		data: {login: document.getElementsByName('login')[0].value, Ps: document.getElementsByName('Ps')[0].value}
+	}).done(function (msg){
+				if (msg == "error")
+				alert("Неправильный логин или пароль");
+				 else {
+					document.location = "/adminmain";
+				}
+				})
+ 
+	}
+</script>
+
+</div>
+</body>
+</html>

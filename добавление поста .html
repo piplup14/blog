@@ -1,0 +1,22 @@
+<html>
+<head>
+<title> добавить пост  </title>
+</head>
+<body>
+<input type="button" value="на основную страницу" onclick="javascript:window.location='/adminmain'"/>
+	<h1> Добавление нового поста</h1>
+<div class='nkm'>
+	<form method="post" action='/postform' enctype="multipart/form-data">
+	<input type="hidden" value="{{id}}" name="id" >
+	<input type="hidden" value="{{razdel}}" name="postname" >
+	<p> Раздел </p> <select name='section'> {{options}}</select>
+	<p>Название</p><br> <input name='name' type='text'>
+	<p>описание</p><br> <input name='description' type='text'>
+	<p>Картинка</p><br> <input type='file' name='img'>
+	<p>Содержимое поста</p> <input type='file' name='content'> <br> 
+	<p></p> <br>
+	<input type='submit'  value='Отправить' onclick="addcoment();">
+</form>
+	</div>
+</body>
+</html>
